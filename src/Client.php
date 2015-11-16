@@ -29,4 +29,7 @@ class Client
         $this->logger = $logger;
     }
 
+    public function send($source, $target) {
+        // TODO: implement webmention discovery and send
+    }
 }
