@@ -32,7 +32,6 @@ You can provide an optional logger to the client:
 $client->setLogger($logger);
 ```
 
-
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
