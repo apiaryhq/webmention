@@ -11,6 +11,12 @@ A PHP Webmention client, for PSR-7 responses. Part of the Apiary IndieWeb suppor
 
 This package is compliant with PSR-1, PSR-2, PSR-4 and PSR-7. If you notice compliance oversights, please send a patch via pull request.
 
+Webmention is a modern alternative to Pingback, and one of the building blocks of the 
+[independent web](http://indiewebcamp.com/principles).
+For more information about Webmentions see [IndieWeb](http://indiewebcamp.com/webmentions),
+[Webmention.org](https://github.com/converspace/webmention) and [Webmention.io](https://webmention.io/).
+
+
 ## Install
 
 Via Composer
