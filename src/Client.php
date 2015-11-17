@@ -11,22 +11,37 @@
 namespace Apiary\Webmention;
 
 
+use GuzzleHttp\ClientInterface;
 use Psr\Log\LoggerInterface;
+use GuzzleHttp\Psr7;
 
 class Client
 {
     protected $logger;
+    protected $client;
 
     /**
      * Client constructor.
      */
-    public function __construct()
+    public function __construct(ClientInterface $client)
     {
+        $this->client = $client;
     }
 
-    public function setLogger($logger)
+    public function setLogger(LoggerInterface $logger)
     {
         $this->logger = $logger;
+    }
+
+    public function discover($target)
+    {
+        $res = $this->client->request('GET', $target);
+        foreach(Psr7\parse_header($res->getHeader('Link')) as $linkHeader) {
+            if ($linkHeader['rel'] == 'webmention') {
+                return substr($linkHeader[0],1,-1);
+            }
+        }
+        throw new \Exception('Webmention link not found');
     }
 
     public function send($source, $target) {

@@ -44,6 +44,12 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Testing
 
+Initially, this package is using a separate running webmention enpoint to test against.
+You'll need to run the following before the tests will run:
+
+ * https://github.com/pfefferle/node-webmention-testendpoint
+ * https://github.com/voxpelli/node-webmention-testpinger
+
 ``` bash
 $ composer test
 ```
